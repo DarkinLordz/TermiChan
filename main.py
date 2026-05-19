@@ -62,17 +62,11 @@ def main():
             break
         if user.lower() in ("/quit", "/exit", "/leave"):
             break
-<<<<<<< HEAD
-        if user.lower() in ("/clear", "/clean", "/flush"):
-            os.remove(hist_path)
-            continue
-=======
         if user.lower() in ("/flush", "/forget"):
             os.remove(hist_path)
             continue
         if user.lower() in ("/cls", "/clear"):
             os.system('cls' if os.name == 'nt' else 'clear')
->>>>>>> 03f7e58 (Add clear command)
         if not user:
             continue
 
