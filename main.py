@@ -44,8 +44,8 @@ def chat(prompt, history, config, character):
     return resp.json()["choices"][0]["message"]["content"]
 
 def main():
-    config_path = sys.argv[1] if len(sys.argv) > 1 else "config.json"
-    character_path = sys.argv[2] if len(sys.argv) > 2 else "character.json"
+    character_path = sys.argv[1] if len(sys.argv) > 1 else "character.json"
+    config_path = sys.argv[2] if len(sys.argv) > 2 else "config.json"
 
     config = load_config(config_path)
     character = load_character(character_path)
