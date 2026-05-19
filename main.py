@@ -1,29 +1,21 @@
-from term_image.image import from_file
-import requests
 import json
+import sys
 
 def chat(prompt: str, personality: str) -> str:
     return "This is your answer"
 
-def load_character():
-    with open("character.json", "r", encoding="utf-8") as f:
+def load_character(character_path: str):
+    with open(character_path, "r", encoding="utf-8") as f:
         character = json.load(f)
     return character
 
-def display_image(character_image: str, width: int, height: int):
-    image = from_file(character_image)
-    image.set_size(width=width, height=height)
-    image.draw()
-
 def main():
 
-    character = load_character()
+    character_path = sys.argv[1]
+    character = load_character(character_path)
 
     character_name = character["name"]
     character_personality = character["personality"]
-    character_image = character["image"]
-
-    display_image(character_image, 50, 20)
 
     while True:
         prompt = input("You: ")
