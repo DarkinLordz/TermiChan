@@ -64,6 +64,7 @@ def main():
             break
         if user.lower() in ("/clear", "/clean", "/flush"):
             os.remove(hist_path)
+            continue
         if not user:
             continue
 
