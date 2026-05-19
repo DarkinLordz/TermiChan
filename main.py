@@ -49,7 +49,7 @@ def main():
 
     config = load_config(config_path)
     character = load_character(character_path)
-    name = character.get("name", "Bot")
+    name = character.get("name", "Yuki")
 
     hist_path = f"{character_path.split('/')[-1].replace('.json','')}_history.json"
     history = load_history(hist_path)
