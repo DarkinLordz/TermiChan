@@ -1,6 +1,7 @@
 import json
 import sys
 import requests
+import os
 
 def load_config(path):
     with open(path, "r") as f:
@@ -59,8 +60,10 @@ def main():
             user = input("You: ").strip()
         except (EOFError, KeyboardInterrupt):
             break
-        if user.lower() in ("quit", "exit", "leave"):
+        if user.lower() in ("/quit", "/exit", "/leave"):
             break
+        if user.lower() in ("/clear", "/clean", "/flush"):
+            os.remove(hist_path)
         if not user:
             continue
 
